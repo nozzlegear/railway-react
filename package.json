@@ -1,54 +1,61 @@
 {
-    "name": "@nozzlegear/railway-react",
-    "version": "2.0.0",
-    "description": "React components for working with @nozzlegear/railway's functional helpers.",
-    "main": "lib/index.js",
-    "typings": "lib/index.d.ts",
-    "repository": "https://github.com/nozzlegear/railway",
-    "author": "Joshua Harms <joshua@nozzlegear.com>",
-    "license": "MIT",
-    "private": false,
-    "devDependencies": {
-        "@types/jest": "^23.3.1",
-        "@types/react": "^16.8.17",
-        "barrelsby": "^1.0.2",
-        "jest": "^23.4.2",
-        "ts-jest": "^23.0.1",
-        "typescript": "3"
+  "name": "@nozzlegear/railway-react",
+  "version": "2.0.0",
+  "description": "React components for working with @nozzlegear/railway's functional helpers.",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "repository": "https://github.com/nozzlegear/railway",
+  "author": "Joshua Harms <joshua@nozzlegear.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@nozzlegear/railway": "^2.0.0",
+    "@types/jest": "^23.3.1",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
+    "barrelsby": "^1.0.2",
+    "jest": "^23.4.2",
+    "prettier": "^1.17.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "ts-jest": "^23.0.1",
+    "typescript": "3"
+  },
+  "scripts": {
+    "barrel": "barrelsby -e \".*\\.spec\\.(t|j)sx?$\" -d ./src --delete",
+    "build": "yarn barrel && tsc -p .",
+    "test": "yarn jest",
+    "prepublishOnly": "yarn build && yarn test",
+    "prettier": "prettier --write ./src/*"
+  },
+  "files": [
+    "lib",
+    "README.md"
+  ],
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testURL": "http://localhost/",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
     },
-    "scripts": {
-        "barrel": "barrelsby -e \".*\\.spec\\.(t|j)sx?$\" -d ./src --delete",
-        "build": "yarn barrel && tsc -p .",
-        "test": "yarn jest",
-        "prepublishOnly": "yarn build && yarn test"
-    },
-    "files": [
-        "lib",
-        "README.md"
+    "testRegex": "src/.*\\.spec\\.(t|j)sx?$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
     ],
-    "jest": {
-        "testEnvironment": "node",
-        "transform": {
-            "^.+\\.tsx?$": "ts-jest"
-        },
-        "testRegex": "src/.*\\.spec\\.(t|j)sx?$",
-        "moduleFileExtensions": [
-            "ts",
-            "tsx",
-            "js",
-            "jsx",
-            "json"
-        ],
-        "testPathIgnorePatterns": [
-            "/node_modules/",
-            "/\\./"
-        ],
-        "watchPathIgnorePatterns": [
-            "<rootDir>/node_modules/"
-        ]
-    },
-    "peerDependencies": {
-        "@nozzlegear/railway": "~2",
-        "react": ">=15"
-    }
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/\\./"
+    ],
+    "watchPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
+  },
+  "peerDependencies": {
+    "@nozzlegear/railway": "~2",
+    "react": ">=15"
+  }
 }
