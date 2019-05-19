@@ -1,8 +1,9 @@
+import * as React from "react";
 import * as Railway from "@nozzlegear/railway";
 
 export interface Props<T> {
-    value: Railway.Option<T>
-    children: (value: T) => (JSX.Element)
+    value: Railway.Option<T>;
+    children: (value: T) => JSX.Element;
 }
 
 /**
