@@ -10,13 +10,9 @@
         "noFallthroughCasesInSwitch": true,
         "esModuleInterop": true,
         "outDir": "./lib",
-        "jsx": "preserve",
+        "jsx": "react",
         "skipLibCheck": true
     },
-    "include": [
-        "src"
-    ],
-    "exclude": [
-        "src/**/*.spec.ts"
-    ]
+    "include": ["src"],
+    "exclude": ["src/**/*.spec.ts"]
 }
