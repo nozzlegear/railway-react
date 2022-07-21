@@ -10,7 +10,7 @@
         "noFallthroughCasesInSwitch": true,
         "esModuleInterop": true,
         "outDir": "./lib",
-        "jsx": "react",
+        "jsx": "preserve",
         "skipLibCheck": true
     },
     "include": ["src"],
