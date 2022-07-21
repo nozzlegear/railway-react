@@ -1,0 +1,22 @@
+{
+    "testEnvironment": "jsdom",
+    "testRegex": "src/.*\\.spec\\.(t|j)sx?$",
+    "testEnvironmentOptions": {
+        "url": "http://localhost/"
+    },
+    "transform": {
+
+        "^.+\\.tsx?$": [
+            "esbuild-jest",
+            {
+                "sourcemap": true,
+                "loaders": {
+                    ".spec.ts": "tsx"
+                }
+            }
+        ]
+    },
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json"],
+    "testPathIgnorePatterns": ["/node_modules/", ".*/published/.*", "/\\./", ".*/bin/.*", ".*/dist/.*"],
+    "watchPathIgnorePatterns": ["<rootDir>/node_modules/"]
+}
