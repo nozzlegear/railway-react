@@ -1,0 +1,9 @@
+src
+lib/*.spec.*
+.gitignore
+.npmignore
+.prettierrc
+jest.json
+*.tgz
+tsconfig.json
+yarn.lock
