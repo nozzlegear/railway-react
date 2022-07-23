@@ -31,10 +31,6 @@
     "prepublishOnly": "npm run test",
     "prettier": "prettier --write ./src/*"
   },
-  "files": [
-    "lib",
-    "README.md"
-  ],
   "peerDependencies": {
     "@nozzlegear/railway": "~2",
     "react": ">=15"
