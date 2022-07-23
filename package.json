@@ -27,7 +27,8 @@
     "barrel": "barrelsby -e \".*\\.spec\\.(t|j)sx?$\" -d ./src --delete",
     "build": "yarn barrel && tsc -p .",
     "test": "jest -c jest.json",
-    "prepublishOnly": "yarn build && yarn test",
+    "prepack": "yarn build",
+    "prepublishOnly": "yarn test",
     "prettier": "prettier --write ./src/*"
   },
   "files": [
